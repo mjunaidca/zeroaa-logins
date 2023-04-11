@@ -12,7 +12,7 @@ import {
 } from "@zerodevapp/social-wallet";
 import { useMemo } from "react";
 
-const RpcProviderExample = () => {
+const EthersButton = () => {
   const [address, setAddress] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -63,4 +63,4 @@ const RpcProviderExample = () => {
   );
 };
 
-export default RpcProviderExample;
+export default EthersButton;

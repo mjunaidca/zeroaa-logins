@@ -30,7 +30,7 @@ const YourApp = () => {
   return <ConnectButton />;
 };
 
-function RainbowKitExample() {
+function RainbowKitBTN() {
   const defaultProjectId = `25b9274b-ea7c-49c7-9041-b0eaa536ddd4`;
 
   const { chains, provider, webSocketProvider } = configureChains(
@@ -84,4 +84,4 @@ function RainbowKitExample() {
   );
 }
 
-export default RainbowKitExample;
+export default RainbowKitBTN;

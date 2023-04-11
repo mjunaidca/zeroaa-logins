@@ -23,7 +23,7 @@ const connector = new GoogleSocialWalletConnector({
   },
 });
 
-const WagmiGoogleExample = () => {
+const WagmiButton = () => {
   const { chains, provider, webSocketProvider } = configureChains(
     [polygonMumbai],
     [publicProvider()]
@@ -83,4 +83,4 @@ const WagmiGoogleExample = () => {
   );
 };
 
-export default WagmiGoogleExample;
+export default WagmiButton;
