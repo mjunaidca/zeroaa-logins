@@ -2,14 +2,17 @@
 
 import "@rainbow-me/rainbowkit/styles.css";
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
-import { mainnet, polygon, optimism, arbitrum } from "wagmi/chains";
-import { alchemyProvider } from "wagmi/providers/alchemy";
 
 import { WagmiConfig } from "wagmi";
 import { publicProvider } from "wagmi/providers/public";
 import { configureChains, createClient } from "wagmi";
 import { polygonMumbai } from "wagmi/chains";
-
+import { enhanceWalletWithAAConnector } from "@zerodevapp/wagmi/rainbowkit";
+import {
+  metaMaskWallet,
+  rainbowWallet,
+  walletConnectWallet,
+} from "@rainbow-me/rainbowkit/wallets";
 import {
   googleWallet,
   facebookWallet,
@@ -29,6 +32,12 @@ const YourApp = () => {
 
 function RainbowKitExample() {
   const defaultProjectId = `25b9274b-ea7c-49c7-9041-b0eaa536ddd4`;
+
+  const { chains, provider, webSocketProvider } = configureChains(
+    [polygonMumbai],
+    [publicProvider()]
+  );
+
   const connectors = connectorsForWallets([
     {
       groupName: "Social",
@@ -45,12 +54,20 @@ function RainbowKitExample() {
         twitterWallet({ options: { projectId: defaultProjectId } }),
       ],
     },
+    {
+      groupName: "EOA Wrapped with AA",
+      wallets: [
+        enhanceWalletWithAAConnector(metaMaskWallet({ chains }), {
+          projectId: defaultProjectId,
+        }),
+      ],
+    },
+    {
+      groupName: "EOA",
+      wallets: [rainbowWallet({ chains })],
+    },
   ]);
 
-  const { chains, provider, webSocketProvider } = configureChains(
-    [polygonMumbai],
-    [publicProvider()]
-  );
   const client = createClient({
     autoConnect: false,
     connectors,
