@@ -1,18 +1,13 @@
 "use client";
 
 import "@rainbow-me/rainbowkit/styles.css";
-import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
-
+import { RainbowKitProvider, darkTheme } from "@rainbow-me/rainbowkit";
+import { rainbowWallet, metaMaskWallet } from "@rainbow-me/rainbowkit/wallets";
 import { WagmiConfig } from "wagmi";
 import { publicProvider } from "wagmi/providers/public";
 import { configureChains, createClient } from "wagmi";
-import { polygonMumbai } from "wagmi/chains";
+import { mainnet, polygon } from "wagmi/chains";
 import { enhanceWalletWithAAConnector } from "@zerodevapp/wagmi/rainbowkit";
-import {
-  metaMaskWallet,
-  rainbowWallet,
-  walletConnectWallet,
-} from "@rainbow-me/rainbowkit/wallets";
 import {
   googleWallet,
   facebookWallet,
@@ -27,14 +22,14 @@ import { connectorsForWallets } from "@rainbow-me/rainbowkit";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const YourApp = () => {
-  return <ConnectButton />;
+  return <ConnectButton label="Connect Your Wallet" />;
 };
 
 function RainbowKitBTN() {
   const defaultProjectId = `25b9274b-ea7c-49c7-9041-b0eaa536ddd4`;
 
   const { chains, provider, webSocketProvider } = configureChains(
-    [polygonMumbai],
+    [mainnet, polygon],
     [publicProvider()]
   );
 
@@ -77,7 +72,17 @@ function RainbowKitBTN() {
 
   return (
     <WagmiConfig client={client}>
-      <RainbowKitProvider chains={chains} modalSize={"compact"}>
+      <RainbowKitProvider
+        chains={chains}
+        modalSize={"compact"}
+        theme={darkTheme({
+          ...darkTheme.accentColors.purple,
+          // accentColor: "#7b3fe4",
+          accentColorForeground: "white",
+          borderRadius: "medium",
+          overlayBlur: "small",
+        })}
+      >
         <YourApp />
       </RainbowKitProvider>
     </WagmiConfig>
