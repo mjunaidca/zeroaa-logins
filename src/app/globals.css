@@ -25,7 +25,7 @@
     }
   
     p {
-      @apply text-xs sm:text-sm xl:text-xl text-black;
+      @apply text-xs sm:text-sm xl:text-base text-black;
     }
   
     a:hover {
