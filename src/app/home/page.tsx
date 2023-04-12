@@ -1,117 +1,226 @@
-// Imports
-import Image from "next/image";
-import { Inter } from "next/font/google";
 import RainbowKitBTN from "../rainbowkit/page";
-import WagmiButton from "../wagma/page";
 import EthersButton from "../ethers/page";
 import Link from "next/link";
 
-const inter = Inter({ subsets: ["latin"] });
+// export default function Home() {
+//   return (
+//     <main className="flex min-h-screen flex-col items-center justify-between p-6 md:p-24">
+//       <div className="flex flex-col min-h-screen justify-start items-center w-full">
+//         <div className="flex flex-col justify-start items-center w-full py-4 md:py-8 space-y-4 md:space-y-6 text-center">
+//           <div>
+//             <h1 className="text-3xl md:text-5xl font-bold">
+//               Step XXX Account Abstraction
+//             </h1>
+//           </div>
+//           <div className="pt-3">
+//             <h4 className="text-xl md:text-2xl font-semibold">
+//               basic_account_creation_trans + mint_nft + create_wallet_social
+//             </h4>
+//           </div>
+//           <div className="flex flex-col md:flex-row justify-center items-center gap-5">
+//             <div>
+//               <RainbowKitBTN />
+//               <span className="text-sm">Rainbow Kit</span>
+//               {/* </RainbowKitBTN> */}
+//             </div>
+//             <div>
+//               <EthersButton />
+//               <span className="text-sm">Ethers API</span>
+//               {/* </EthersButton> */}
+//             </div>
+//           </div>
+//           <div className="flex flex-wrap justify-center items-stretch w-full p-8 mt-8 bg-gray-50 rounded-md">
+//             <div className="flex flex-col p-6 m-2 bg-white border border-gray-200/95 rounded-md relative w-full md:w-1/2">
+//               <span className="text-6xl font-bold text-gray-200 absolute top-0 left-0 opacity-10">
+//                 2
+//               </span>
+//               <h3 className="text-2xl font-semibold">Step 2: Mint NFT</h3>
+//               <div className="flex gap-6 flex-col px-4 items-start justify-start">
+//                 <p className="text-base md:text-lg">
+//                   <Link href="https://mumbai.polygonscan.com/address/0x6fbD5Ed295495750F9B3433d45092535FbD19EcF#tokentxnsErc721">
+//                     Gasless AA Trans see under ERC-721 Token Txns
+//                   </Link>
+//                 </p>
+//                 <p className="text-base md:text-lg">
+//                   Smart Contract Address:
+//                   0x6fbD5Ed295495750F9B3433d45092535FbD19EcF
+//                 </p>
+//               </div>
+//             </div>
+//             <div>
+//               <h3 className="text-2xl font-semibold">
+//                 Step 1 basic_account_creation_trans
+//               </h3>
+//               <div className="flex gap-6 flex-col px-4 items-start justify-start">
+//                 <div className=" break-all flex gap-6 flex-col px-4 items-start justify-start">
+//                   <div>
+//                     <Link href="https://goerli.etherscan.io/tx/0x33e1afb40b7cd52029f79350fc4c10b32d900a9bdd2b89ac3a2d6383fb90164c">
+//                       <p>Funded Goreli ETH In Meta Mask Wallet</p>
+//                     </Link>
+//                   </div>
+//                   <div>
+//                     <p>
+//                       <b>SimpleAccount address: </b>
+//                       0x3b808582Fb3EB0409Ad32d0c8822fe3a027511F6
+//                     </p>
+//                   </div>
+//                   <div>
+//                     <Link href="https://goerli.etherscan.io/tx/0xfd93d594f2c51f375323e48ba00a1ec451f8f17fb7a9a641ea08b637eb1ef86f">
+//                       <p>
+//                         <b>Funded Smart Contract:</b>
+//                         0xfd93d594f2c51f375323e48ba00a1ec451f8f17fb7a9a641ea08b637eb1ef86f
+//                       </p>
+//                     </Link>
+//                   </div>
+//                   <div>
+//                     <Link href="https://goerli.etherscan.io/tx/0xc75d9e0a6ecc7294c6f6fca9896530235e48c1e4a40a37f6ae7396317f552e08">
+//                       <p>
+//                         <b>Transfer ETH: </b>
+//                         0xc75d9e0a6ecc7294c6f6fca9896530235e48c1e4a40a37f6ae7396317f552e08
+//                       </p>
+//                     </Link>
+//                   </div>
+//                   <div>
+//                     <Link href="https://goerli.etherscan.io/tx/0xc75d9e0a6ecc7294c6f6fca9896530235e48c1e4a40a37f6ae7396317f552e08">
+//                       <p>
+//                         <b>Batch Transfer ETH:</b>
+//                         0xcca6ddd1f4b17930fca1447b6795e8ffe5f29065da81c5670c4dfd6a954e8049
+//                       </p>
+//                     </Link>
+//                   </div>
+//                   <div>
+//                     <Link href="https://goerli.etherscan.io/tx/0x16506aec5f33bbe44fae78c9fbb8606551327eb818a45a928418c07f836b144a">
+//                       <p>
+//                         <b>Funded ERC20 Tokens:</b>
+//                         0x16506aec5f33bbe44fae78c9fbb8606551327eb818a45a928418c07f836b144a
+//                       </p>
+//                     </Link>
+//                   </div>
+//                   <div>
+//                     <Link href="https://goerli.etherscan.io/tx/0x8eb143daea32e7f9b4fdc9384ce2241d5ee56f662cf8d37428d6472e5fe3f73c">
+//                       <p>
+//                         <b> Transfer ERC-20 token: </b>
+//                         0x8eb143daea32e7f9b4fdc9384ce2241d5ee56f662cf8d37428d6472e5fe3f73c
+//                       </p>
+//                     </Link>
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </main>
+//   );
+// }
 
-// Home component
 export default function Home() {
   return (
-    <main className="min-h-screen p-6">
-      <div className="flex flex-col justify-center items-center space-y-6">
-        <h1 className="text-4xl font-bold">Step XXX Account Abstraction</h1>
-        <h2 className="text-2xl font-semibold">
-          basic_account_creation_trans + mint_nft + create_wallet_social
-        </h2>
-        <div className="flex flex-wrap justify-center items-center gap-4">
+    <main className="flex min-h-screen flex-col items-center justify-between p-6 md:p-24">
+      <div className="flex flex-col min-h-screen justify-start items-center w-full">
+        <div className="flex flex-col justify-start items-center w-full py-4 md:py-8 space-y-4 md:space-y-6 text-center">
           <div>
-            <WagmiButton />
+            <h1 className="text-3xl md:text-5xl font-bold">
+              Step XXX Account Abstraction
+            </h1>
           </div>
-          <div>
-            <RainbowKitBTN />
+          <div className="pt-3">
+            <h4 className="text-xl md:text-2xl font-semibold">
+              basic_account_creation_trans + mint_nft + create_wallet_social
+            </h4>
           </div>
-          <div>
-            <EthersButton />
-          </div>
-        </div>
-        <div className="w-full mt-8">
-          <div className="flex flex-wrap gap-6 bg-gray-100 items-stretch w-full p-6 border-gray-200 rounded-md">
-            <div className="w-full sm:w-1/2">
-              <h3 className="text-xl font-semibold">Step 2: Mint NFT</h3>
-              <StepContent
-                links={[
-                  {
-                    href: "https://mumbai.polygonscan.com/address/0x6fbD5Ed295495750F9B3433d45092535FbD19EcF#tokentxnsErc721",
-                    text: "Gasless AA Trans see under ERC-721 Token Txns",
-                  },
-                ]}
-                details={[
-                  {
-                    title: "Smart Contract Address:",
-                    content: "0x6fbD5Ed295495750F9B3433d45092535FbD19EcF",
-                  },
-                ]}
-              />
+          <div className="flex flex-col md:flex-row justify-center items-center gap-5">
+            <div>
+              <RainbowKitBTN />
+              <span className="text-sm">Rainbow Kit</span>
+              {/* </RainbowKitBTN> */}
             </div>
-            <div className="w-full sm:w-1/2">
-              <h3 className="text-xl font-semibold">
+            <div>
+              <EthersButton />
+              <span className="text-sm">Ethers API</span>
+              {/* </EthersButton> */}
+            </div>
+          </div>
+          <div className="flex flex-wrap justify-center items-stretch w-full p-8 mt-8 bg-gray-50 rounded-md">
+            <div className="flex flex-col p-6 m-2 bg-white border border-gray-200/95 rounded-md relative w-full md:w-4/5">
+              <span className="text-6xl font-bold text-gray-200 absolute top-0 left-0 opacity-10">
+                2
+              </span>
+              <h3 className="text-2xl font-semibold">Step 2: Mint NFT</h3>
+              <p className="text-base md:text-lg">
+                <Link href="https://mumbai.polygonscan.com/address/0x6fbD5Ed295495750F9B3433d45092535FbD19EcF#tokentxnsErc721">
+                  Gasless AA Trans see under ERC-721 Token Txns
+                </Link>
+              </p>
+              <p className="text-base md:text-lg">
+                Smart Contract Address:
+                0x6fbD5Ed295495750F9B3433d45092535FbD19EcF
+              </p>
+            </div>
+            <div className="flex flex-col p-6 m-2 bg-white border border-gray-200/95 rounded-md relative w-full md:w-4/5">
+              <span className="text-6xl font-bold text-gray-200 absolute top-0 left-0 opacity-10">
+                1
+              </span>
+              <h3 className="text-2xl font-semibold">
                 Step 1 basic_account_creation_trans
               </h3>
-              <StepContent
-                links={[
-                  {
-                    href: "https://goerli.etherscan.io/tx/0x33e1afb40b7cd52029f79350fc4c10b32d900a9bdd2b89ac3a2d6383fb90164c",
-                    text: "Funded Goreli ETH In Meta Mask Wallet",
-                  },
-                  {
-                    href: "https://goerli.etherscan.io/tx/0xfd93d594f2c51f375323e48ba00a1ec451f8f17fb7a9a641ea08b637eb1ef86f",
-                    text: "Funded Smart Contract: 0xfd93d594f2c51f375323e48ba00a1ec451f8f17fb7a9a641ea08b637eb1ef86f",
-                  },
-                  {
-                    href: "https://goerli.etherscan.io/tx/0xc75d9e0a6ecc7294c6f6fca9896530235e48c1e4a40a37f6ae7396317f552e08",
-                    text: "Transfer ETH: 0xc75d9e0a6ecc7294c6f6fca9896530235e48c1e4a40a37f6ae7396317f552e08",
-                  },
-                  {
-                    href: "https://goerli.etherscan.io/tx/0xc75d9e0a6ecc7294c6f6fca9896530235e48c1e4a40a37f6ae7396317f552e08",
-                    text: "Batch Transfer ETH: 0xcca6ddd1f4b17930fca1447b6795e8ffe5f29065da81c5670c4dfd6a954e8049",
-                  },
-                  {
-                    href: "https://goerli.etherscan.io/tx/0x16506aec5f33bbe44fae78c9fbb8606551327eb818a45a928418c07f836b144a",
-                    text: "Funded ERC20 Tokens: 0x16506aec5f33bbe44fae78c9fbb8606551327eb818a45a928418c07f836b144a",
-                  },
-                  {
-                    href: "https://goerli.etherscan.io/tx/0x8eb143daea32e7f9b4fdc9384ce2241d5ee56f662cf8d37428d6472e5fe3f73c",
-                    text: "Transfer ERC-20 token: 0x8eb143daea32e7f9b4fdc9384ce2241d5ee56f662cf8d37428d6472e5fe3f73c",
-                  },
-                ]}
-                details={[
-                  {
-                    title: "SimpleAccount address:",
-                    content: "0x3b808582Fb3EB0409Ad32d0c8822fe3a027511F6",
-                  },
-                ]}
-              />
+              <div className=" break-all flex gap-6 flex-col px-4 items-start justify-start">
+                <div>
+                  <Link href="https://goerli.etherscan.io/tx/0x33e1afb40b7cd52029f79350fc4c10b32d900a9bdd2b89ac3a2d6383fb90164c">
+                    <p>Funded Goreli ETH In Meta Mask Wallet</p>
+                  </Link>
+                </div>
+                <div>
+                  <p>
+                    <b>SimpleAccount address: </b>
+                    0x3b808582Fb3EB0409Ad32d0c8822fe3a027511F6
+                  </p>
+                </div>
+                <div>
+                  <Link href="https://goerli.etherscan.io/tx/0xfd93d594f2c51f375323e48ba00a1ec451f8f17fb7a9a641ea08b637eb1ef86f">
+                    <p>
+                      <b>Funded Smart Contract:</b>
+                      0xfd93d594f2c51f375323e48ba00a1ec451f8f17fb7a9a641ea08b637eb1ef86f
+                    </p>
+                  </Link>
+                </div>
+                <div>
+                  <Link href="https://goerli.etherscan.io/tx/0xc75d9e0a6ecc7294c6f6fca9896530235e48c1e4a40a37f6ae7396317f552e08">
+                    <p>
+                      <b>Transfer ETH: </b>
+                      0xc75d9e0a6ecc7294c6f6fca9896530235e48c1e4a40a37f6ae7396317f552e08
+                    </p>
+                  </Link>
+                </div>
+                <div>
+                  <Link href="https://goerli.etherscan.io/tx/0xc75d9e0a6ecc7294c6f6fca9896530235e48c1e4a40a37f6ae7396317f552e08">
+                    <p>
+                      <b>Batch Transfer ETH:</b>
+                      0xcca6ddd1f4b17930fca1447b6795e8ffe5f29065da81c5670c4dfd6a954e8049
+                    </p>
+                  </Link>
+                </div>
+                <div>
+                  <Link href="https://goerli.etherscan.io/tx/0x16506aec5f33bbe44fae78c9fbb8606551327eb818a45a928418c07f836b144a">
+                    <p>
+                      <b>Funded ERC20 Tokens:</b>
+                      0x16506aec5f33bbe44fae78c9fbb8606551327eb818a45a928418c07f836b144a
+                    </p>
+                  </Link>
+                </div>
+                <div>
+                  <Link href="https://goerli.etherscan.io/tx/0x8eb143daea32e7f9b4fdc9384ce2241d5ee56f662cf8d37428d6472e5fe3f73c">
+                    <p>
+                      <b> Transfer ERC-20 token: </b>
+                      0x8eb143daea32e7f9b4fdc9384ce2241d5ee56f662cf8d37428d6472e5fe3f73c
+                    </p>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </main>
-  );
-}
-
-// Helper components
-function StepTitle({ title }: any) {
-  return <h3>{title}</h3>;
-}
-
-function StepContent({ links, details }: any) {
-  return (
-    <div className="flex gap-6 flex-col px-4 items-start justify-start">
-      {links.map((link: any, index: any) => (
-        <p key={index}>
-          <Link href={link.href}>{link.text}</Link>
-        </p>
-      ))}
-      {details.map((detail: any, index: any) => (
-        <p key={index}>
-          <b>{detail.title} </b>
-          {detail.content}
-        </p>
-      ))}
-    </div>
   );
 }

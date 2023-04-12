@@ -27,6 +27,7 @@ const EthersButton = () => {
       owner: await getSocialWalletOwner(
         `25b9274b-ea7c-49c7-9041-b0eaa536ddd4`,
         socialWallet
+        // GoogleSocialWallet
       ),
     });
     setAddress(await signer.getAddress());
@@ -49,7 +50,11 @@ const EthersButton = () => {
       )}
       <div>
         {!connected && (
-          <button onClick={createWallet} disabled={loading}>
+          <button
+            onClick={createWallet}
+            disabled={loading}
+            className="bg-black text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-gray-800 active:bg-gray-700 transition-all duration-200"
+          >
             {loading ? "loading..." : "Create Wallet"}
           </button>
         )}

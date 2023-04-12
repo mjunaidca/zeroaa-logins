@@ -1,11 +1,6 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
 import RainbowKitBTN from "./rainbowkit/page";
-import WagmiButton from "./wagma/page";
 import EthersButton from "./ethers/page";
 import Link from "next/link";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -25,9 +20,9 @@ export default function Home() {
           </div>
           <div className="flex flex=col md: flex-row justify-center items-center gap-5">
             {" "}
-            <div>
+            {/* <div>
               <WagmiButton />
-            </div>
+            </div> */}
             <div>
               <RainbowKitBTN />
             </div>
