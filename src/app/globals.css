@@ -5,7 +5,7 @@
 
 @layer components {
     body {
-      @apply max-w-screen-xl w-11/12 mx-auto min-h-screen;
+      @apply max-w-screen-xl w-full px-2 sm:px-0 sm:w-11/12 mx-auto min-h-screen;
     }
   
     h1 {
@@ -17,15 +17,15 @@
     }
   
     h2 {
-      @apply text-2xl sm:text-3xl text-gray-800 font-medium lg:text-4xl xl:text-5xl dark:text-white;
+      @apply text-2xl sm:text-3xl text-gray-800 font-medium lg:text-4xl xl:text-5xl ;
     }
   
     h3 {
-      @apply text-xl text-gray-800 font-medium lg:text-2xl dark:text-white;
+      @apply text-xl text-gray-800 font-medium lg:text-2xl ;
     }
   
     p {
-      @apply text-xs sm:text-sm xl:text-base text-black;
+      @apply text-sm xl:text-base text-black;
     }
   
     a:hover {
