@@ -33,7 +33,7 @@ export default function App() {
             </div>
             <p className="pt-4 italic font-serif">
               <Link href="https://github.com/mjunaidca/zeroaa-logins">
-                Next.js Tutorial To Create Social Wallets
+                Next.js Tutorial To Create Social Wallets (Coming Soon)
               </Link>
             </p>
           </div>
