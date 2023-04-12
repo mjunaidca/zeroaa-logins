@@ -14,25 +14,33 @@ export default function App() {
           </div>
           <div className="mt-6">
             <h4 className="text-lg md:text-2xl font-semibold">
-              Concepts. Transactions. Mint NFTs. Social-Wallets
+              Concepts. Transactions. Mint NFTs. SocialWallets
             </h4>
           </div>
-
-          <div className="flex flex-col md:flex-row justify-center items-center gap-5">
-            <div>
-              <RainbowKitBTN />
-              <span className="text-sm">Rainbow Kit</span>
-              {/* </RainbowKitBTN> */}
+          <div className="flex flex-col bg-white border-dashed border-2 border-gray-200/10 rounded-md relative w-full md:w-4/5">
+            <span className="text-6xl px-6 mx-2 font-bold text-gray-400 absolute top-0 left-0 opacity-10">
+              3
+            </span>
+            <div className="flex pt-4 flex-col md:flex-row justify-center items-center gap-8">
+              <div>
+                <RainbowKitBTN />
+                <span className="text-sm">RainbowKit</span>
+              </div>
+              <div>
+                <EthersButton />
+                <span className="text-sm">Ethers API</span>
+              </div>
             </div>
-            <div>
-              <EthersButton />
-              <span className="text-sm">Ethers API</span>
-              {/* </EthersButton> */}
-            </div>
+            <p className="pt-4 italic font-serif">
+              <Link href="https://github.com/mjunaidca/zeroaa-logins">
+                Next.js Tutorial To Create Social Wallets
+              </Link>
+            </p>
           </div>
-          <div className="flex flex-wrap justify-center items-stretch w-full p-8 mt-8 bg-gray-50 rounded-md">
+
+          <div className="flex flex-wrap justify-center items-stretch w-full p-8 mt-4 bg-gray-50 rounded-md">
             <div className="flex flex-col p-6 m-2 bg-white border border-gray-200/95 rounded-md relative w-full md:w-4/5">
-              <span className="text-6xl font-bold text-gray-200 absolute top-0 left-0 opacity-10">
+              <span className="text-6xl font-bold text-gray-300 absolute top-0 left-0 opacity-10">
                 2
               </span>
               <h3 className="pb-4 break-all">Step 2: Mint NFT</h3>
@@ -47,10 +55,10 @@ export default function App() {
               </p>
             </div>
             <div className="flex flex-col p-6 m-2 bg-white border border-gray-200/95 rounded-md relative w-full md:w-4/5">
-              <span className="text-6xl font-bold text-gray-200 absolute top-0 left-0 opacity-10">
+              <span className="text-6xl font-bold text-gray-300 absolute top-0 left-0 opacity-10">
                 1
               </span>
-              <h3 className="pb-4">Step 1 account_creation_trans</h3>
+              <h3 className="pb-4">Step 1: Account Creation & Transaction</h3>
 
               <div className=" break-all flex gap-6 flex-col px-4 items-start justify-start">
                 <div>

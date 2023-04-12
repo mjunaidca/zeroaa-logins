@@ -53,7 +53,7 @@ const EthersButton = () => {
           <button
             onClick={createWallet}
             disabled={loading}
-            className="bg-black text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-gray-800 active:bg-gray-700 transition-all duration-200"
+            className="bg-black hover:scale-105 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-gray-800 active:bg-gray-700 transition-all duration-200"
           >
             {loading ? "loading..." : "Create Wallet"}
           </button>
